@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> -->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+   <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+  <!-- <ul class="menu">
+    <li><a href="#!/view1">view1 --- </a></li>
+    <li><a href="#!/view2">view2 --- </a></li>
+  </ul> -->
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+<div class="container">
+  <div class="header">
+    <ul class="pull-right nav nav-pills">
+      <li class="active"><a ng-href="#">Home</a></li>
+    </ul>
+    <h1>Movie Mania</h1>
+  </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div ng-controller="formCtrl" class="pull-right">
+       Find Movies: <input type="text" name="title">
+      </div>
+
+      <div ng-controller="myCtrl">
+        <div ng-controller="subCtrl">
+          <h3 ng-bind="title"></h3>
+        </div>
+        <div ng-repeat="movie in movies"> <!-- ng-repeat -->
+          <h5>{{movie.title}}</h5>
+          <img ng-src="{{movie.image}}" style="height:125px; widthg:135px;"/>
+          <div ng-bind="movie.description"></div>
+          <hr>
+        </div>
+    
+       <!-- <input type="text" ng-model="firstName"><br />
+        <input type="text" ng-model="lastName"> -->
+
+      </div>
+      
+    </div>
+    <div class="col-sm-4">
+      
+    </div>
+  </div>
+</div>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
