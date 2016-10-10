@@ -62,7 +62,29 @@
       
     </div>
     <div class="col-sm-4">
-      
+      <h3>Add Movies!</h3>
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" placeholder="Enter title" ng-model="newMovieTitle">
+      </div>
+      <div class="form-group">
+        <label>Image</label>
+        <input class="form-control" placeholder="image" ng-model="newMovieImage">
+      </div>
+      <div class="form-group">
+        <label>Preview</label>
+        <input class="form-control" placeholder="Enter title" ng-model="newMoviePreview">
+      </div>
+      <div class="form-group">
+        <h5>Preview</h5>
+        <img ng-src="{{newMovieImage}}">
+      </div>
+      <div>
+        <select>
+          <option></option>
+        </select>
+      </div>
+      <button>Submit</button>
     </div>
   </div>
 </div>
