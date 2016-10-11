@@ -65,28 +65,37 @@
       <h3>Add Movies!</h3>
       <div class="form-group">
         <label>Title</label>
-        <input class="form-control" placeholder="Enter title" ng-model="newMovieTitle">
+        <input class="form-control" ng-keyup="validateTitle()" placeholder="Enter title" ng-model="newMovieTitle">
       </div>
       <div class="form-group">
         <label>Image</label>
         <input class="form-control" placeholder="image" ng-model="newMovieImage">
       </div>
       <div class="form-group">
-        <label>Preview</label>
-        <input class="form-control" placeholder="Enter title" ng-model="newMoviePreview">
-      </div>
-      <div class="form-group">
         <h5>Preview</h5>
         <img ng-src="{{newMovieImage}}">
       </div>
-      <div>
+      <div class="form-group" ng-model="newMovieCategory" ng-change="checkCategorySelected()">
+        <label>Category</label>
         <select>
-          <option></option>
+          <option value=""> --- </option>
+          <option value="Epic"> Empic </option>
+          <option value="Awesome"> Awesome </option>
+          <option value="Average"> Average </option>
         </select>
       </div>
-      <button>Submit</button>
+      <div class="form-group">
+        <label>Description</label>
+       <textarea class="form-control" ng-model="newMovieDescription" ng-change="checkDescription()"></textarea>
+      </div>
+      <button class="btn btn-info" ng-click="addMovie()">Add</button>
     </div>
   </div>
+  
+  <div class="footer">
+    <p><span class="glyphicon glyphicon-heart"></span> Roberto Affuso - DataTrack</p>
+  </div>
+
 </div>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
