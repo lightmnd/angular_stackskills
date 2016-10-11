@@ -36,14 +36,46 @@ app.controller('myCtrl', function($scope) {
 		image: indieGames,
 		description: "indipendent games maker!!!"
 	}];
-	/*$scope.movieTitle = movie.title;
-	$scope.movieImage = movie.image;
-	$scope.movieDescription =  movie.description;*/
+	
 
 	$scope.movies = movieList;
 
-    /*$scope.firstName = "Rob";
-    $scope.lastName = "Aff";*/
+	$scope.newMovieTitle = "";
+	//console.log("qui" + $scope.newMovieTitle);
+	$scope.newMovieDescription = "";
+	$scope.newMovieimage = "https://www.digitalprolab.com/images/This_Is_What_I_Know_Header2_2016.png";
+
+
+	$scope.validateTitle = function() {
+		if($scope.newMovieTitle.length > 0){
+			console.debug($scope.newMovieTitle);
+		}
+		else {
+			window.alert("Title is required!");
+		}
+	}
+/*
+	$scope.addMovie = function() {
+		var movie = {
+			title: $scope.newMovieTitle,
+			image: $scope.newMovieimage,
+			category: $scope.newMovieCategory,
+			description: $scope.newMovieDescription
+		}
+
+		$scope.movies.push(movie);
+	}
+
+	$scope.checkCategorySelected = function() {
+		if($scope.newMovieCategory == "") {
+			window.alert("Category cannot be empty");
+		}
+	}
+
+	$scope.checkDescription = function() {
+		console.debug($scope.newMovieDescription);
+	}
+*/
 });
 
 app.controller('subCtrl', function($scope){
@@ -52,7 +84,7 @@ app.controller('subCtrl', function($scope){
 
 
 app.controller('formCtrl', function($scope){
-	console.log('okkkkkk');	
+	//console.log('okkkkkk');	
 });
 
 })(); 
